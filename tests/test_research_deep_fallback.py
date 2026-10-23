@@ -48,6 +48,7 @@ def test_synthesis_failure_keeps_phase3_findings(tmp_path):
     env = os.environ.copy()
     env["HOME"] = str(fake_home)
     env["USERPROFILE"] = str(fake_home)
+    env["RESEARCH_AUTOOPEN"] = "0"  # the probe saves a note; never launch the real Obsidian app
     env.pop("OBSIDIAN_VAULT_PATH", None)
     env.pop("OBSIDIAN_ENV_FILE", None)
 
